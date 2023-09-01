@@ -9,8 +9,13 @@ const Product = ({ item }) => {
           <h4>{item.name}</h4>
           <span>${item.price}</span>
         </div>
-        <div className="product-button-div">
-          <button>Add to Cart</button>
+        <div className="add-to-cart-div">
+          <div className="qty-div">
+            <button className="qty-button">-</button>
+            <span className="qty-input">1</span>
+            <button className="qty-button">+</button>
+          </div>
+          <button className="cart-button">Add to Cart</button>
         </div>
       </div>
     </>
