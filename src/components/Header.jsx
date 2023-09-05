@@ -8,7 +8,7 @@ const Header = () => {
         <h1>Plant Shop</h1>
         <div className="header-links">
           <Link to="home">Home</Link>
-          <Link to="products">Shop</Link>
+          <Link to="shop">Shop</Link>
           <div>Cart</div>
         </div>
       </div>

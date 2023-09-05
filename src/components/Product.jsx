@@ -1,6 +1,18 @@
 import "../styles/Product.css";
+import { useState } from "react";
 
 const Product = ({ item }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const updateQuantity = (qty) => {
+    if (qty > 0) {
+      setQuantity(qty)
+    }
+    else {
+      qty = 1
+    }
+  }
+
   return (
     <>
       <div className="product-card">
@@ -11,9 +23,19 @@ const Product = ({ item }) => {
         </div>
         <div className="add-to-cart-div">
           <div className="qty-div">
-            <button className="qty-button">-</button>
-            <span className="qty-input">1</span>
-            <button className="qty-button">+</button>
+            <button
+              className="qty-button"
+              onClick={() => updateQuantity(quantity - 1)}
+            >
+              -
+            </button>
+            <span className="qty-input">{quantity}</span>
+            <button
+              className="qty-button"
+              onClick={() => updateQuantity(quantity + 1)}
+            >
+              +
+            </button>
           </div>
           <button className="cart-button">Add to Cart</button>
         </div>

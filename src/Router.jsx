@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./components/Home";
-import Products from "./components/Products";
+import Shop from "./components/Shop";
 import ErrorPage from "./components/ErrorPage";
 
 const Router = () => {
@@ -20,8 +20,8 @@ const Router = () => {
           element: <Home />,
         },
         {
-          path: "products",
-          element: <Products />,
+          path: "shop",
+          element: <Shop />,
         },
       ],
     },
