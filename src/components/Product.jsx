@@ -1,8 +1,9 @@
 import "../styles/Product.css";
 import { useState } from "react";
 
-const Product = ({ item, updateCart }) => {
+const Product = ({ item, updateCart, cart }) => {
   const [quantity, setQuantity] = useState(1);
+  console.log(cart);
 
   const updateQuantity = (qty) => {
     if (qty > 0) {
@@ -12,9 +13,20 @@ const Product = ({ item, updateCart }) => {
     }
   };
 
-  const addToCart = () => {
-    const newCart = [{ id: 1, quantity: 1 }];
-    updateCart(newCart);
+  const addToCart = (id, qty) => {
+    const idFound = cart.filter((item) => item.id === id);
+    if (idFound.length < 1) {
+      const newCart = [...cart, {id: id, quantity: qty }];
+      updateCart(newCart);
+    } else {
+      const newCart = cart.map((item) => {
+        if (item.id === id) {
+          return { id: id, quantity: item.quantity + qty };
+        }
+        return item;
+      });
+      updateCart(newCart);
+    }
   };
 
   return (
@@ -41,7 +53,10 @@ const Product = ({ item, updateCart }) => {
               +
             </button>
           </div>
-          <button className="cart-button" onClick={addToCart}>
+          <button
+            className="cart-button"
+            onClick={() => addToCart(item.id, quantity)}
+          >
             Add to Cart
           </button>
         </div>
