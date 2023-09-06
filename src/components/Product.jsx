@@ -1,17 +1,21 @@
 import "../styles/Product.css";
 import { useState } from "react";
 
-const Product = ({ item }) => {
+const Product = ({ item, updateCart }) => {
   const [quantity, setQuantity] = useState(1);
 
   const updateQuantity = (qty) => {
     if (qty > 0) {
-      setQuantity(qty)
+      setQuantity(qty);
+    } else {
+      qty = 1;
     }
-    else {
-      qty = 1
-    }
-  }
+  };
+
+  const addToCart = () => {
+    const newCart = [{ id: 1, quantity: 1 }];
+    updateCart(newCart);
+  };
 
   return (
     <>
@@ -37,7 +41,9 @@ const Product = ({ item }) => {
               +
             </button>
           </div>
-          <button className="cart-button">Add to Cart</button>
+          <button className="cart-button" onClick={addToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </>

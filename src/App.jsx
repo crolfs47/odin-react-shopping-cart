@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <div>
-        <Outlet cart={cart} updateCart={(newCart) => setCart(newCart)} />
+        <Outlet context={[cart, setCart]} />
       </div>
     </>
   );
