@@ -1,28 +1,29 @@
 import "../styles/Cart.css";
-import productList from "../helpers/productList";
 
 const Cart = ({ cart }) => {
-  const products = productList;
+  const totalCost = cart.reduce((total, item) => {
+    return total + (item.product.price * item.quantity)
+  }, 0)
 
   return (
     <>
       Cart
       <div className="cart-container">
         {cart.map((item) => {
-          const product = products.filter((prod) => prod.id === item.id);
-          const cost = product[0].price * item.quantity;
+          const cost = item.product.price * item.quantity;
 
           return (
-            <div className="cart-item-card" key={item.id}>
-              <img src={product[0].image} alt="" />
+            <div className="cart-item-card" key={item.product.id}>
+              <img src={item.product.image} alt="" />
               <div>
-                <h5>{product[0].name}</h5>
+                <h5>{item.product.name}</h5>
                 <span>${cost}</span>
               </div>
             </div>
           );
         })}
       </div>
+      <div>${totalCost}</div>
     </>
   );
 };
