@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const Product = ({ item, updateCart, cart }) => {
   const [quantity, setQuantity] = useState(1);
-  console.log(cart);
 
   const updateQuantity = (qty) => {
     if (qty > 0) {
@@ -13,20 +12,21 @@ const Product = ({ item, updateCart, cart }) => {
     }
   };
 
-  const addToCart = (id, qty) => {
-    const idFound = cart.filter((item) => item.id === id);
+  const addToCart = (product, qty) => {
+    const idFound = cart.filter((item) => item.product === product);
     if (idFound.length < 1) {
-      const newCart = [...cart, {id: id, quantity: qty }];
+      const newCart = [...cart, {product: product, quantity: qty }];
       updateCart(newCart);
     } else {
       const newCart = cart.map((item) => {
-        if (item.id === id) {
-          return { id: id, quantity: item.quantity + qty };
+        if (item.product === product) {
+          return { product: item.product, quantity: item.quantity + qty };
         }
         return item;
       });
       updateCart(newCart);
     }
+    updateQuantity(1);
   };
 
   return (
@@ -55,7 +55,7 @@ const Product = ({ item, updateCart, cart }) => {
           </div>
           <button
             className="cart-button"
-            onClick={() => addToCart(item.id, quantity)}
+            onClick={() => addToCart(item, quantity)}
           >
             Add to Cart
           </button>

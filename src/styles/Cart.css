@@ -1,0 +1,6 @@
+.cart-item-card img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 7px;
+}
