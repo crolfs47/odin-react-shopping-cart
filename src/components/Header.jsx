@@ -1,7 +1,13 @@
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
+import cartImage from "../assets/shopping-cart.png"
 
-const Header = () => {
+const Header = ({ cart }) => {
+
+  const cartQuantity = cart.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
+  
   return (
     <>
       <div className="header-container">
@@ -9,11 +15,11 @@ const Header = () => {
         <div className="header-links">
           <Link to="home">Home</Link>
           <Link to="shop">Shop</Link>
-          <div>Cart</div>
+          <button className="cart-button"><img src={cartImage} alt="" /> {cartQuantity}</button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Header;

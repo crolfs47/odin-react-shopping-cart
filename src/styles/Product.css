@@ -54,7 +54,7 @@
   padding-right: 4px;
 }
 
-.cart-button {
+.add-to-cart-button {
   background-color:rgb(118, 173, 150);
   color: white;
   padding: 6px 12px;
@@ -63,7 +63,7 @@
   font-size: .75em;
 }
 
-.cart-button:hover {
+.add-to-cart-button:hover {
   cursor: pointer;
   background-color: rgb(64, 112, 92);
 }

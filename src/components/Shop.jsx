@@ -6,7 +6,6 @@ import { useOutletContext } from "react-router-dom";
 const Shop = () => {
   const [cart, setCart] = useOutletContext();
   const products = productList;
-  console.log(cart);
 
   return (
     <>

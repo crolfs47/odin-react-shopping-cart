@@ -29,7 +29,6 @@ const Cart = ({ cart, updateCart }) => {
 
   return (
     <>
-      Cart
       <div className="cart-container">
         {cart.map((item) => {
           const cost = item.product.price * item.quantity;

@@ -10,3 +10,15 @@
   align-items: center;
 }
 
+.header-container img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.cart-button {
+  background: transparent;
+  border: none;
+  color: rgb(64, 112, 92);
+}
+
