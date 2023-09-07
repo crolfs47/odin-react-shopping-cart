@@ -6,16 +6,26 @@ import Cart from "./components/Cart";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartOpen, setCartOpen] = useState(false);
 
   return (
     <>
-      <Header cart={cart}/>
+      <Header cart={cart} cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <div>
         <Outlet context={[cart, setCart]} />
       </div>
-      <div>
-        <Cart cart={cart} updateCart={(newCart) => setCart(newCart)} />
-      </div>
+      {cartOpen && (
+        <div className="modal" id="cartModal">
+          <div className="modal-content">
+            <Cart
+              cart={cart}
+              updateCart={(newCart) => setCart(newCart)}
+              cartOpen={cartOpen}
+              setCartOpen={setCartOpen}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

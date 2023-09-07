@@ -2,7 +2,11 @@ import "../styles/Header.css";
 import { Link } from "react-router-dom";
 import cartImage from "../assets/shopping-cart.png"
 
-const Header = ({ cart }) => {
+const Header = ({ cart, cartOpen, setCartOpen }) => {
+
+  const displayCartModal = () => {
+    setCartOpen(!cartOpen);
+  }
 
   const cartQuantity = cart.reduce((total, item) => {
     return total + item.quantity;
@@ -15,7 +19,7 @@ const Header = ({ cart }) => {
         <div className="header-links">
           <Link to="home">Home</Link>
           <Link to="shop">Shop</Link>
-          <button className="cart-button"><img src={cartImage} alt="" /> {cartQuantity}</button>
+          <button className="cart-button" onClick={displayCartModal}><img src={cartImage} alt="" /> {cartQuantity}</button>
         </div>
       </div>
     </>

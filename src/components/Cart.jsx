@@ -1,10 +1,10 @@
 import "../styles/Cart.css";
+import closeImage from "../assets/close.png"
 
-const Cart = ({ cart, updateCart }) => {
+const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
   const totalCost = cart.reduce((total, item) => {
     return total + item.product.price * item.quantity;
   }, 0);
-
 
   const removeFromCart = (cartItem) => {
     const newCart = cart.filter((item) => item !== cartItem);
@@ -14,8 +14,7 @@ const Cart = ({ cart, updateCart }) => {
   const updateCartQuantity = (cartItem, qty) => {
     if (cartItem.quantity + qty < 1) {
       removeFromCart(cartItem);
-    }
-    else {
+    } else {
       const newCart = cart.map((item) => {
         if (item === cartItem) {
           return { product: item.product, quantity: item.quantity + qty };
@@ -26,10 +25,14 @@ const Cart = ({ cart, updateCart }) => {
     }
   };
 
-
   return (
     <>
       <div className="cart-container">
+        
+        <div className="cart-header">
+          <h3>Your Cart</h3>
+          <button className="close-button" onClick={() => setCartOpen(!cartOpen)}><img src={closeImage} alt="" /></button>
+        </div>
         {cart.map((item) => {
           const cost = item.product.price * item.quantity;
 
@@ -57,7 +60,12 @@ const Cart = ({ cart, updateCart }) => {
                       +
                     </button>
                   </div>
-                  <button className="remove-button" onClick={() => removeFromCart(item)}>REMOVE</button>
+                  <button
+                    className="remove-button"
+                    onClick={() => removeFromCart(item)}
+                  >
+                    REMOVE
+                  </button>
                 </div>
               </div>
             </div>
