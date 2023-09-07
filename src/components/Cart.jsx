@@ -1,9 +1,19 @@
 import "../styles/Cart.css";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, updateCart }) => {
   const totalCost = cart.reduce((total, item) => {
     return total + item.product.price * item.quantity;
   }, 0);
+
+  const updateCartQuantity = (cartItem, qty) => {
+    const newCart = cart.map((item) => {
+      if (item === cartItem) {
+        return { product: item.product, quantity: item.quantity + qty };
+      }
+      return item;
+    });
+    updateCart(newCart);
+  };
 
   return (
     <>
@@ -22,9 +32,19 @@ const Cart = ({ cart }) => {
                 </div>
                 <div className="product-quantity">
                   <div className="qty-div">
-                    <button className="qty-button">-</button>
+                    <button
+                      className="qty-button"
+                      onClick={() => updateCartQuantity(item, -1)}
+                    >
+                      -
+                    </button>
                     <span className="qty-input">{item.quantity}</span>
-                    <button className="qty-button">+</button>
+                    <button
+                      className="qty-button"
+                      onClick={() => updateCartQuantity(item, 1)}
+                    >
+                      +
+                    </button>
                   </div>
                   <button className="remove-button">REMOVE</button>
                 </div>

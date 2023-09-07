@@ -14,7 +14,7 @@ function App() {
         <Outlet context={[cart, setCart]} />
       </div>
       <div>
-        <Cart cart={cart}/>
+        <Cart cart={cart} updateCart={(newCart) => setCart(newCart)} />
       </div>
     </>
   );
