@@ -5,15 +5,27 @@ const Cart = ({ cart, updateCart }) => {
     return total + item.product.price * item.quantity;
   }, 0);
 
-  const updateCartQuantity = (cartItem, qty) => {
-    const newCart = cart.map((item) => {
-      if (item === cartItem) {
-        return { product: item.product, quantity: item.quantity + qty };
-      }
-      return item;
-    });
+
+  const removeFromCart = (cartItem) => {
+    const newCart = cart.filter((item) => item !== cartItem);
     updateCart(newCart);
   };
+
+  const updateCartQuantity = (cartItem, qty) => {
+    if (cartItem.quantity + qty < 1) {
+      removeFromCart(cartItem);
+    }
+    else {
+      const newCart = cart.map((item) => {
+        if (item === cartItem) {
+          return { product: item.product, quantity: item.quantity + qty };
+        }
+        return item;
+      });
+      updateCart(newCart);
+    }
+  };
+
 
   return (
     <>
@@ -46,7 +58,7 @@ const Cart = ({ cart, updateCart }) => {
                       +
                     </button>
                   </div>
-                  <button className="remove-button">REMOVE</button>
+                  <button className="remove-button" onClick={() => removeFromCart(item)}>REMOVE</button>
                 </div>
               </div>
             </div>
