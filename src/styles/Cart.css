@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.cart-container h3 {
+  margin: 12px;
+}
+
 .cart-item-card {
   display: flex;
   margin: 12px;
@@ -22,7 +27,7 @@
 
 .product-details {
   margin-left: 12px;
-  min-width: 200px;
+  width: 100%;
 }
 
 .product-name-price {
@@ -39,14 +44,20 @@
 .remove-button {
   background-color: transparent;
   border: none;
-  color:  rgb(64, 112, 92);
+  color:  rgb(118, 173, 150);
   font-size: .7em;
   font-weight: bold;
 }
 
 .subtotal {
+  display: flex;
   margin: 12px;
   font-weight: bold;
+  justify-content: end;
+}
+
+.subtotal div {
+  padding-left: 12px;
 }
 
 .cart-header {
@@ -64,4 +75,20 @@
 .close-button {
   background: transparent;
   border: none;
+}
+
+.checkout-button {
+  background-color:rgb(118, 173, 150);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 24px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.checkout-button:hover {
+  cursor: pointer;
+  background-color: rgb(64, 112, 92);
 }

@@ -1,5 +1,5 @@
 import "../styles/Cart.css";
-import closeImage from "../assets/close.png"
+import closeImage from "../assets/close.png";
 
 const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
   const totalCost = cart.reduce((total, item) => {
@@ -28,10 +28,14 @@ const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
   return (
     <>
       <div className="cart-container">
-        
         <div className="cart-header">
           <h3>Your Cart</h3>
-          <button className="close-button" onClick={() => setCartOpen(!cartOpen)}><img src={closeImage} alt="" /></button>
+          <button
+            className="close-button"
+            onClick={() => setCartOpen(!cartOpen)}
+          >
+            <img src={closeImage} alt="" />
+          </button>
         </div>
         {cart.map((item) => {
           const cost = item.product.price * item.quantity;
@@ -71,7 +75,11 @@ const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
             </div>
           );
         })}
-        <div className="subtotal">Subtotal: ${totalCost}</div>
+        <div className="subtotal">
+          <div>Subtotal:</div>
+          <div>${totalCost}</div>
+        </div>
+        <button className="checkout-button">Checkout</button>
       </div>
     </>
   );
