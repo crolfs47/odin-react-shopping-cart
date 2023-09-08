@@ -1,0 +1,14 @@
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.checkout-container h2 {
+  margin: 12px;
+}
+
+.checkout-container p {
+  margin: 12px;
+}
