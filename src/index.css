@@ -25,7 +25,14 @@ button {
 
 @font-face {
   font-family: 'BodyFont';
-  src: url('./fonts/TTFirsNeue-Light.ttf');
+  src: url('./fonts/Mollen-Narrow.otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BodyFont-Bold';
+  src: url('./fonts/Mollen-BoldNarrow.otf');
   font-weight: 600;
   font-style: normal;
 }
