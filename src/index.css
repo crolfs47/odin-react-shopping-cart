@@ -1,13 +1,32 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: BodyFont, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
 
 body {
+  font-family: BodyFont, sans-serif;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   color: rgb(64, 112, 92);
+}
+
+button {
+  font-family: BodyFont, sans-serif;
+}
+
+@font-face {
+  font-family: 'LogoFont';
+  src: url('./fonts/ClassicalDiary-Regular.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BodyFont';
+  src: url('./fonts/TTFirsNeue-Light.ttf');
+  font-weight: 600;
+  font-style: normal;
 }
 

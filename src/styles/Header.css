@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+.header-container h1 {
+  font-family: LogoFont, sans-serif;
+  font-size: 40px;
+  margin: 6px 24px;
+}
+
 .header-links {
   display: flex;
   align-items: center;

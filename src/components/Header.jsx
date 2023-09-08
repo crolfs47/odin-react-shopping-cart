@@ -15,7 +15,7 @@ const Header = ({ cart, cartOpen, setCartOpen }) => {
   return (
     <>
       <div className="header-container">
-        <h1>Plant Shop</h1>
+        <h1>Plant People</h1>
         <div className="header-links">
           <Link to="home">Home</Link>
           <Link to="shop">Shop</Link>
