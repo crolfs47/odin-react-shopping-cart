@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header cart={cart} cartOpen={cartOpen} setCartOpen={setCartOpen} />
-      <div>
+      <div className="body">
         <Outlet context={[cart, setCart]} />
       </div>
       {cartOpen && (
