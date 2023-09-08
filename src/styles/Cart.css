@@ -86,6 +86,15 @@
   font-size: 1em;
   font-weight: bold;
   margin-top: 12px;
+  width: 100%;
+
+}
+
+.checkout-link {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 .checkout-button:hover {

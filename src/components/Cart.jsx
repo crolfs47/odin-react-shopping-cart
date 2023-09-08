@@ -1,5 +1,6 @@
 import "../styles/Cart.css";
 import closeImage from "../assets/close.png";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
   const totalCost = cart.reduce((total, item) => {
@@ -24,6 +25,11 @@ const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
       updateCart(newCart);
     }
   };
+
+  const resetCart = () => {
+    setCartOpen(!cartOpen);
+    updateCart([]);
+  }
 
   return (
     <>
@@ -79,7 +85,7 @@ const Cart = ({ cart, updateCart, cartOpen, setCartOpen }) => {
           <div>Subtotal:</div>
           <div>${totalCost}</div>
         </div>
-        <button className="checkout-button">Checkout</button>
+        <Link to="checkout" className={"checkout-link"} onClick={resetCart}><button className="checkout-button">Checkout</button></Link>
       </div>
     </>
   );
