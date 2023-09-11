@@ -12,14 +12,19 @@
   margin-bottom: 0;
 }
 
-.header-container a {
+a {
+  color: rgb(64, 112, 92);
+  text-decoration: none;
+}
+
+.header-links a {
   font-size: 1.1em;
   color: rgb(64, 112, 92);
   text-decoration: none;
   transition: transform 0.2s;
 }
 
-.header-container a:hover {
+.header-links a:hover {
   transform: scale(1.1);
 }
 
