@@ -8,15 +8,40 @@
 .header-container h1 {
   font-family: LogoFont, sans-serif;
   font-size: 40px;
-  margin: 6px 24px;
+  margin: 6px;
+  margin-bottom: 0;
+}
+
+.header-container a {
+  font-size: 1.1em;
+  color: rgb(64, 112, 92);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.header-container a:hover {
+  transform: scale(1.1);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
 }
 
 .header-links {
   display: flex;
   align-items: center;
+  gap: 24px;
+  margin-right: 12px;
 }
 
-.header-container img {
+.header-links img {
   width: 25px;
   height: 25px;
   object-fit: cover;
@@ -26,5 +51,9 @@
   background: transparent;
   border: none;
   color: rgb(64, 112, 92);
+  transition: transform 0.2s;
 }
 
+.cart-button:hover {
+  transform: scale(1.1);
+}

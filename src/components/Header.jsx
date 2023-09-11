@@ -1,6 +1,7 @@
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
-import cartImage from "../assets/shopping-cart.png"
+import cartIcon from "../assets/shopping-cart.png"
+import plantIcon from "../assets/plants.png"
 
 const Header = ({ cart, cartOpen, setCartOpen }) => {
 
@@ -15,11 +16,14 @@ const Header = ({ cart, cartOpen, setCartOpen }) => {
   return (
     <>
       <div className="header-container">
-        <h1>Plant People</h1>
+        <div className="header-logo">
+          <img src={plantIcon} alt="plant-icon" />
+          <h1>Plant People</h1>
+        </div>
         <div className="header-links">
           <Link to="home">Home</Link>
           <Link to="shop">Shop</Link>
-          <button className="cart-button" onClick={displayCartModal}><img src={cartImage} alt="" /> {cartQuantity}</button>
+          <button className="cart-button" onClick={displayCartModal}><img src={cartIcon} alt="cart-icon" /> {cartQuantity}</button>
         </div>
       </div>
     </>
