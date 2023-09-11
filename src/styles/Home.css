@@ -1,11 +1,14 @@
 .home-container img {
   max-width: 100%;
   margin: 0;
-  filter: brightness(75%);
+  filter: brightness(70%);
 }
 
 .home-container h1 {
+  font-family: LogoFong;
+  font-size: 2.75em;
   margin: 12px;
+  margin-bottom: 6px;
 }
 
 .home-image-div {
@@ -35,9 +38,10 @@
   font-size: 1em;
   font-weight: bold;
   width: 100%;
+  opacity: 85%;
 }
 
 .shop-plants-button:hover {
   cursor: pointer;
-  opacity: 85%;
+  opacity: 100%;
 }
