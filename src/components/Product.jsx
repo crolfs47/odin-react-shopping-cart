@@ -32,7 +32,7 @@ const Product = ({ item, updateCart, cart }) => {
   return (
     <>
       <div className="product-card">
-        <img src={item.image} alt="" />
+        <img src={item.image} alt={item.name} />
         <div className="product-info-div">
           <h4>{item.name}</h4>
           <span>${item.price}</span>
@@ -45,7 +45,7 @@ const Product = ({ item, updateCart, cart }) => {
             >
               -
             </button>
-            <span className="qty-input">{quantity}</span>
+            <span className="qty-input" data-testid="qty-input">{quantity}</span>
             <button
               className="qty-button"
               onClick={() => updateQuantity(quantity + 1)}
