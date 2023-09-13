@@ -4,7 +4,7 @@ import Header from "../src/components/Header";
 import { BrowserRouter } from "react-router-dom";
 
 describe("Header component", () => {
-  it("displays the correct header", () => {
+  it("renders the correct header", () => {
     const mockSetCartOpen = vi.fn();
     render(
       <BrowserRouter>
@@ -14,7 +14,7 @@ describe("Header component", () => {
     expect(screen.getByRole("heading").textContent).toMatch(/Plant People/i);
   });
 
-  it("displays the navigation links", () => {
+  it("renders the navigation links", () => {
     const mockSetCartOpen = vi.fn();
     render(
       <BrowserRouter>
@@ -25,7 +25,7 @@ describe("Header component", () => {
     expect(screen.getAllByRole("link")).toMatch(/Shop/i);
   });
 
-  it("displays the number of items in the cart", () => {
+  it("renders the number of items in the cart", () => {
     const mockSetCartOpen = vi.fn();
     render(
       <BrowserRouter>
