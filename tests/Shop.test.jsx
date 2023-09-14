@@ -16,7 +16,6 @@ describe("Shop component", () => {
         <Shop />
       </BrowserRouter>
     );
-    screen.debug();
     const products = screen.getAllByTestId("product-card");
     expect(products).toHaveLength(productList.length);
   });
