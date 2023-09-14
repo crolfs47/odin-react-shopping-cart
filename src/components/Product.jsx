@@ -31,7 +31,7 @@ const Product = ({ item, updateCart, cart }) => {
 
   return (
     <>
-      <div className="product-card">
+      <div className="product-card" data-testid="product-card">
         <img src={item.image} alt={item.name} />
         <div className="product-info-div">
           <h4>{item.name}</h4>
