@@ -105,6 +105,5 @@ describe("Product component", () => {
     await user.click(addToCartButton);
 
     expect(mockUpdateCart).toHaveBeenCalledOnce();
-  })
+  });
 });
-
