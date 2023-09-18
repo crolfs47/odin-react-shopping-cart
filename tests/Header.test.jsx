@@ -2,6 +2,7 @@ import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Header from "../src/components/Header";
 import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 describe("Header component", () => {
   it("renders the correct header", () => {
@@ -42,41 +43,17 @@ describe("Header component", () => {
     expect(screen.getByRole("button").textContent).toMatch(/5/i);
   });
 
-  // it("does not show the cart by default", () => {
-  //   const mockSetCartOpen = vi.fn();
-  //   render(
-  //     <BrowserRouter>
-  //       <Header
-  //         cart={[]}
-  //         cartOpen={false}
-  //         setCartOpen={mockSetCartOpen}
-  //       />
-  //     </BrowserRouter>
-  //   );
-  //   expect(screen.queryByText("Your Cart")).not.toBeInTheDocument();
-  // });
+  it("displays the cart when the cart button is clicked", async () => {
+    const mockSetCartOpen = vi.fn();
+    const user = userEvent.setup();
 
-  // it("shows the cart when the cart button is clicked on", async () => {
-  //   const mockSetCartOpen = vi.fn();
-  //   const user = userEvent.setup();
-  //   render(
-  //     <BrowserRouter>
-  //       <Header
-  //         cart={[]}
-  //         cartOpen={false}
-  //         setCartOpen={mockSetCartOpen}
-  //       />
-  //     </BrowserRouter>
-  //   );
-  //   const cartButton = screen.getByRole("button", { name: "cart-icon 0" });
-
-  //   await user.click(cartButton);
-  //   expect(mockSetCartOpen).toHaveBeenCalledWith(true);
-  //   expect(screen.queryByText("Your Cart")).toBeInTheDocument();
-
-  // })
+    render(
+      <BrowserRouter>
+        <Header cart={[]} cartOpen={false} setCartOpen={mockSetCartOpen} />
+      </BrowserRouter>
+    );
+    const cartButton = screen.getByRole("button");
+    await user.click(cartButton);
+    expect(mockSetCartOpen).toBeCalledWith(true);
+  });
 });
-
-// it does not show the cart by default
-
-// it shows the cart when the cart button is clicked on
