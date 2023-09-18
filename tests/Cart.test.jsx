@@ -139,6 +139,3 @@ describe("Cart component", () => {
   })
 });
 
-// renders the cart when cartOpen is true - TEST IN APP
-// hides the cart when cartOpen is false - TEST IN APP
-
