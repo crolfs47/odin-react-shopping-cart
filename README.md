@@ -19,8 +19,8 @@ Project completed as part of The Odin Project. Create a mock shopping cart app.
 
 ## What I learned:
  - How to use React Router for client side routing
-     - How to use an Outlet to render child components alongside the parent component
-     - useOutletContext to pass props through the outlet to the components
+     - Using Outlets to render child components alongside the parent component
+     - Using useOutletContext to pass props through the outlet to the components
  - How to test with Vitest and React Testing Library, including mocking callbacks and components, testing routing with outlets and useOutletContext
  
 ## Still can improve:
@@ -28,9 +28,9 @@ Project completed as part of The Odin Project. Create a mock shopping cart app.
  - Could make a more realistic checkout process
 
 Assignment - https://www.theodinproject.com/lessons/react-new-shopping-cart
+
 View Project - https://plantpeople.netlify.app
 
-View Project - 
 ## Screenshots:
 
 Home Page:
